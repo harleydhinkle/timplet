@@ -15,7 +15,12 @@ public:
 	bool empty() const;
 	int front() const;
 	int back() const;
-	int& sub(size_t vel);
+	int operator[](size_t idx) const;
+	int &operator[](size_t idx);
+	void clear();
+	void erase(size_t idx);
+	int count(int value);
+	void insert(size_t idx, int value);
 private:
 	bool grow(size_t minSize);
 };

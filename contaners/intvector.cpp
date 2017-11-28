@@ -59,11 +59,47 @@ int intvector::back() const
 {
 	return data[size - 1];
 }
-int & intvector::sub(size_t vel)
+int intvector::operator[](size_t idx) const
 {
-	if (vel <=0 ) 
+	return data[idx];
+}
+int & intvector::operator[](size_t idx)
+{
+	return data[idx];
+}
+void intvector::clear()
+{
+	size = 0;
+}
+void intvector::erase(size_t idx)
+{
+	for (int i = idx; i < size; i++) 
 	{
-
+		int temp = data[i];
+		data[i] = data[i + 1];
+		data[i + 1] = temp;
+	}
+	size--;
+}
+int intvector::count(int value)
+{
+	int counter = 0;
+	for (int i;);
+	return counter;
+}
+void intvector::insert(size_t idx, int value)
+{
+	assert(idx >= 0);
+	assert(idx < size);
+	append(value);
+	if(idx<size - 1)
+	{
+		for (int i = size; i >= idx; i--)
+		{
+			int temp = data[i];
+			data[i] = data[i + 1];
+			data[i + 1] = temp;
+		}
 	}
 }
 bool intvector::grow(size_t minSize)
