@@ -21,6 +21,9 @@ public:
 	void erase(size_t idx);
 	int count(int value);
 	void insert(size_t idx, int value);
+	void Reserve(size_t newCapacity);
+	void Compact();
+	void printVector();
 private:
 	bool grow(size_t minSize);
 };

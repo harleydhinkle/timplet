@@ -1,7 +1,7 @@
 #include "intvector.h"
 #include <cassert>
 #include <cstring>
-
+#include <iostream>
 intvector::intvector()
 {
 	capacity = 2;
@@ -84,7 +84,13 @@ void intvector::erase(size_t idx)
 int intvector::count(int value)
 {
 	int counter = 0;
-	for (int i;);
+	for (int i = 0; i < size; i++)
+	{
+		if (data[i] == value)
+		{
+			counter++;
+		}
+	}
 	return counter;
 }
 void intvector::insert(size_t idx, int value)
@@ -102,6 +108,39 @@ void intvector::insert(size_t idx, int value)
 		}
 	}
 }
+void intvector::Reserve(size_t newCapacity)
+{
+	if (newCapacity > capacity)
+	{
+		int *newData = new int[newCapacity];
+		memcpy(newData, data, sizeof(int) * size);
+		delete[] data;
+		data = newData;
+		capacity = newCapacity;
+	}
+}
+
+void intvector::Compact()
+{
+	if (capacity > size)
+	{
+		int *newData = new int[size];
+		memcpy(newData, data, sizeof(int) * size);
+		delete[] data;
+		data = newData;
+		capacity = size;
+	}
+}
+
+void intvector::printVector()
+{
+	for (int i = 0; i < size; i++)
+	{
+		std::cout << data[i] << std::endl;
+	}
+
+}
+
 bool intvector::grow(size_t minSize)
 {
 	assert(minSize <= 64000);
