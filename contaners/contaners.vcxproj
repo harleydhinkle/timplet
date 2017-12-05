@@ -111,10 +111,13 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="intvector.cpp" />
+    <ClCompile Include="linkedlist.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="intvector.h" />
+    <ClInclude Include="linkedlist.h" />
+    <ClInclude Include="tlinkedlist.h" />
     <ClInclude Include="tvector.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

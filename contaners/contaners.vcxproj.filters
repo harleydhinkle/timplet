@@ -21,12 +21,21 @@
     <ClCompile Include="intvector.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="linkedlist.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="intvector.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="tvector.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="linkedlist.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="tlinkedlist.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
