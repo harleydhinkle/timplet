@@ -22,6 +22,7 @@ void intLnkedlist::append(int val)
 	intLinkedListNode*newNode = new intLinkedListNode;
 	newNode->value = val;
 	newNode->next = nullptr;
+	newNode->pred = nullptr;
 	if (head == nullptr) 
 	{
 		head = newNode;
@@ -33,6 +34,7 @@ void intLnkedlist::append(int val)
 		{
 			iter = iter->next;
 		}
+		newNode->pred = iter;
 		iter->next = newNode;
 	}
 }
@@ -92,17 +94,26 @@ int intLnkedlist::back() const
 void intLnkedlist::erase(size_t idx)
 {
 	intLinkedListNode*iter = head;
-	intLinkedListNode*pred = iter;
-	
+	int counter = 0;
+
+	assert(idx <= size());
 	//iterate to our idx
-	while (iter = pred)
+	while (iter->next!=nullptr&&counter !=idx)
 	{
-		iter->value = idx;
-		delete iter;
+		
+		iter = iter->next;
+		counter++;
 	}
 
 	//set out previous idx equal to our iterators->next
-	pred = iter->next;
+	//assert(counter == idx);
+	iter->pred->next = iter->next;
+	if (idx == 0) 
+	{
+		head = iter->next;
+	}
+
+	delete iter;
 
 }
 
@@ -110,32 +121,58 @@ void intLnkedlist::clear()
 {
 
 	intLinkedListNode*iter = head;
-	intLinkedListNode*store = iter;
 	while (iter !=nullptr)
 	{
-		iter->next = store;
+		intLinkedListNode* next = iter->next;
 		delete iter;
+		iter = next;
 	}
-	iter->value;
+	head = nullptr;
+	
 }
 
 int intLnkedlist::count(int value)
 {
 	int counter = 0;
 	intLinkedListNode*iter = head;
-	intLinkedListNode*pred = iter;
-	while (iter = nullptr) 
+	//intLinkedListNode*pred = iter;
+	while (iter->next != nullptr) 
 	{
-		if (iter->value = pred->value) 
+		
+		if (iter->value = value) 
 		{
-			counter++; 
+			counter++;
 		}
+		iter = iter->next;
 	}
 	return counter;
 }
 
 void intLnkedlist::insert(size_t idx, int value)
 {
+	//prev
+	//iter
+	intLinkedListNode*iter = head;
+	
+	int counter = 0;
+
+	//New node = new Linkedlistnode
+	intLinkedListNode*newNode = new intLinkedListNode;
+	//newNode->value = value
+	newNode->value = value;
+	//iteratoe through our linked list to find the index we want
+	while (iter->next != nullptr &&counter!= idx ) 
+	{
+		
+		iter = iter->next;
+		counter++;
+	}
+	//find the previos node and find the next the node
+	//prev->next = newNode
+	iter->pred->next = newNode;
+	//newNode->next = iter
+	newNode->next = iter;
+	newNode->pred = iter->pred;
 
 }
 

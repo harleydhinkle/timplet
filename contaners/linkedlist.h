@@ -6,7 +6,7 @@ public:
 	{
 		int value;
 		intLinkedListNode*next;
-
+		intLinkedListNode*pred;
 	};
 	intLnkedlist();
 	~intLnkedlist();

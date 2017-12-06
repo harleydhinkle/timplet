@@ -2,6 +2,7 @@
 #include <cassert>
 #include <cstring>
 #include <iostream>
+#include "iterator.h"
 template<typename t>
 class tVector 
 {
@@ -39,6 +40,15 @@ public:
 	{
 		delete[]data;
 	}
+	iterator<tVector<t>>begin() 
+	{
+		return iterator<tVector<t>>(*this ,0)
+	}
+	iterator<tVector<t>>end() 
+	{
+		return iterator<tVector<t>>(*this, size);
+	}
+
 	t& at(size_t idx) 
 	{
 		assert(idx >= 0);
