@@ -42,7 +42,7 @@ public:
 	}
 	iterator<tVector<t>>begin() 
 	{
-		return iterator<tVector<t>>(*this ,0)
+		return iterator<tVector<t>>(*this, 0);
 	}
 	iterator<tVector<t>>end() 
 	{

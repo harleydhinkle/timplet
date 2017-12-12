@@ -4,13 +4,11 @@
 #include <cstring>
 #include "linkedlist.h"
 #include "algorithms.h"
+
 int main() 
 {
-	tVector<int>nums;
-	nums.append(0);
-	nums.append(1);
-	auto begin = nums.begin();
-	auto end = nums.end();
+	
+	
 	//int nums[] = { 1,3,5,7,9 };
 	//int* start = nums;
 	//int*end = start + 5;

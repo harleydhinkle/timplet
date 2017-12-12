@@ -18,39 +18,9 @@
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="intvector.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="linkedlist.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="intvector.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="tvector.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="linkedlist.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="tlinkedlist.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="algorithms.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="iterator.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="stack.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="queue.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="deque.h">
+    <ClInclude Include="maps.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

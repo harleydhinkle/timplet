@@ -46,10 +46,10 @@ public:
 			iter->next = newNode;
 		}
 	}
-	T at(T index) 
+	int at(T index) 
 	{
 		tLinkedListNode*iter = head;
-		T iterationCount = 0;
+		int iterationCount = 0;
 		while (iterationCount != index &&iter != nullptr)
 		{
 			iterationCount++;
@@ -70,11 +70,11 @@ public:
 		}
 		return counter;
 	}
-	T empty() const 
+	bool empty() const 
 	{
 		return head == nullptr;
 	}
-	T front() const 
+	T front()
 	{
 		assert(!empty());
 		return head->value;
@@ -126,9 +126,9 @@ public:
 		head = nullptr;
 
 	}
-	T count(T value) 
+	int count(T value) 
 	{
-		T counter = 0;
+		int counter = 0;
 		tLinkedListNode*iter = head;
 		//intLinkedListNode*pred = iter;
 		while (iter->next != nullptr)
@@ -148,7 +148,7 @@ public:
 		//iter
 		tLinkedListNode*iter = head;
 
-		T counter = 0;
+		int counter = 0;
 
 		//New node = new Linkedlistnode
 		tLinkedListNode*newNode = new intLinkedListNode;
